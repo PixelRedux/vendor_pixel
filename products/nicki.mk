@@ -12,9 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit pixel common GSM stuff.
-$(call inherit-product, vendor/pixel/config/gsm.mk)
-
 # Enhanced NFC
 $(call inherit-product, vendor/pixel/config/nfc_enhanced.mk)
 

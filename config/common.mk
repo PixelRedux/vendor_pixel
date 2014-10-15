@@ -36,14 +36,6 @@ PRODUCT_BOOTANIMATION := vendor/pixel/prebuilt/common/bootanimation/$(TARGET_BOO
 endif
 endif
 
-ifdef CM_NIGHTLY
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.rommanager.developerid=cyanogenmodnightly
-else
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.rommanager.developerid=cyanogenmod
-endif
-
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
@@ -77,10 +69,6 @@ ifneq ($(TARGET_BUILD_VARIANT),eng)
 # Enable ADB authentication
 ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
 endif
-
-# Copy over the changelog to the device
-PRODUCT_COPY_FILES += \
-    vendor/pixel/CHANGELOG.mkdn:system/etc/CHANGELOG-CM.txt
 
 # Backup Tool
 ifneq ($(WITH_GMS),true)
@@ -121,7 +109,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/base/data/keyboards/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_0719.kl
 
-# This is CM!
+# This isn't CM but still!
 PRODUCT_COPY_FILES += \
     vendor/pixel/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
 
@@ -147,12 +135,8 @@ PRODUCT_PACKAGES += \
     DSPManager \
     libcyanogen-dsp \
     audio_effects.conf \
-    CMWallpapers \
     Apollo \
-    CMFileManager \
     LockClock \
-    CMUpdater \
-    CMAccount \
     CMHome
 
 # CM Hardware Abstraction Framework

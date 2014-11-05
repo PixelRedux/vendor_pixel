@@ -1,4 +1,4 @@
-# Copyright (C) 2014 The PixelROM Project
+# Copyright (C) 2013 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,12 +19,18 @@ $(call inherit-product, vendor/pixel/config/nfc_enhanced.mk)
 $(call inherit-product, vendor/pixel/config/common_full_phone.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/sony/nicki/full_nicki.mk)
+$(call inherit-product, device/sony/nicki/nicki.mk)
+
+TARGET_SCREEN_HEIGHT := 854
+TARGET_SCREEN_WIDTH := 480
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := nicki
 PRODUCT_NAME := pixel_nicki
 PRODUCT_BRAND := Sony
-PRODUCT_MODEL := C1905
+PRODUCT_MODEL := nicki
 PRODUCT_MANUFACTURER := Sony
 PRODUCT_CHARACTERISTICS := phone
+
+# Release name
+PRODUCT_RELEASE_NAME := XperiaM
